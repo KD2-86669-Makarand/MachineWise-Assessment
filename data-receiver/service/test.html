@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO Test</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const socket = io("http://localhost:8080");
+
+      socket.on("connect", () => {
+        console.log("Connected!", socket.id);
+      });
+
+      socket.on("data", (data) => {
+        // console.log("Data received:", data);
+      });
+
+      socket.on("alert", (alert) => {
+        console.log("ALERT:", alert);
+      });
+
+      socket.on("stream_stopped", (msg) => {
+        console.log("Stream stopped:", msg);
+      });
+    </script>
+  </body>
+</html>

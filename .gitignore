@@ -1,0 +1,56 @@
+# ----------------------------
+# Node.js (data-receiver)
+# ----------------------------
+node_modules/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+.env
+*.env
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# MongoDB Dumps (if used)
+dump/
+
+# Postman collections (optional)
+*.postman_collection.json
+
+# ----------------------------
+# Python (data-simulator)
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Python virtual environments
+env/
+venv/
+.venv/
+ENV/
+
+# Pytest and Coverage
+.cache/
+.coverage
+
+# Python environment configs
+*.env
+.env
+
+# IDEs (again, in case Python project separate)
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
