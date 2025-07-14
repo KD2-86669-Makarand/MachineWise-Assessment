@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "7f9dc3bd-a296-4edb-81ce-a03fa7df336d",
+		"name": "Machinewise-sensor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42469891"
+	},
+	"item": [
+		{
+			"name": "fetch-data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\" : \"CLOSED\" \r\n}"
+				},
+				"url": "http://localhost:8080/api/data"
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-sensor-data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/data/:device_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"data",
+						":device_id"
+					],
+					"variable": [
+						{
+							"key": "device_id",
+							"value": "sensor-001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-sensor-status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/sensors/status"
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-sensor-stat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/stats?type=temp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"stats"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "temp"
+						},
+						{
+							"key": "type",
+							"value": "vibration",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "current",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter-data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"device_id\": \"sensor-003\",\r\n    \"type\": \"current\",\r\n    \"start\": \"2025-07-01T00:00:00Z\",\r\n    \"end\": \"2025-07-31T23:59:59Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/data/filter"
+			},
+			"response": []
+		}
+	]
+}
