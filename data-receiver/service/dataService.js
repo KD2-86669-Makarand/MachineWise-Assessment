@@ -42,13 +42,30 @@ module.exports = {
       timestamp: { $gte: threshold },
     });
 
-    const online = onlineSensors.map((id) => ({
-      device_id: id,
-      status: "online",
-    }));
-    const offline = allSensors
-      .filter((id) => !onlineSensors.includes(id))
-      .map((id) => ({ device_id: id, status: "offline" }));
+    const getSensorType = async (device_id) => {
+      const latest = await SensorData.findOne({ device_id })
+        .sort({ timestamp: -1 })
+        .select("type");
+      return latest?.type || "Unknown";
+    };
+
+    const online = await Promise.all(
+      onlineSensors.map(async (id) => ({
+        device_id: id,
+        type: await getSensorType(id),
+        status: "online",
+      }))
+    );
+
+    const offline = await Promise.all(
+      allSensors
+        .filter((id) => !onlineSensors.includes(id))
+        .map(async (id) => ({
+          device_id: id,
+          type: await getSensorType(id),
+          status: "offline",
+        }))
+    );
 
     return [...online, ...offline];
   },

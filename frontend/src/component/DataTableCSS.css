@@ -1,0 +1,67 @@
+.data-table-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filters-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filters-section label {
+    font-weight: 500;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .text-danger {
+    background-color: #ffe0e0;
+  }
+
+.filters-section input[type="datetime-local"],
+.filters-section select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.filters-section .btn-success {
+  padding: 10px 25px;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: #198754;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.filters-section .btn-success:hover {
+  background-color: #157347;
+}

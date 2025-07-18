@@ -5,6 +5,7 @@ const { setupWebSocket } = require("./controllers/websocketController");
 const apiRoutes = require("./routes/apiRoutes");
 const alertService = require("./service/alertService");
 const { MONGODB_URI, PORT } = require("./config/settings");
+const cors = require("cors");
 
 const app = express();
 const server = http.createServer(app);
@@ -21,7 +22,14 @@ alertService.initializeAlertService(server);
 setupWebSocket(server);
 
 app.use(express.json());
-
+// app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 // routess
 app.use("/api", apiRoutes);
 

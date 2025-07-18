@@ -3,7 +3,7 @@ module.exports = {
   MONGODB_URI: "mongodb://localhost:27017/sensorData",
   WEBSOCKET_PATH: "/stream/data",
   ALERT_THRESHOLDS: {
-    TEMP: 5,
+    TEMP: 50,
     VIBRATION: 0.08,
     CURRENT: 100,
   },

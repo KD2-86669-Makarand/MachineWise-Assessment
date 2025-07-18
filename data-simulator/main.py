@@ -7,6 +7,6 @@ async def main():
     client = WebSocketClient()
     await client.run(data_generator)
     
-if __name__ == "__main__":  # ✅ fixed
+if __name__ == "__main__":
     print("Starting data simulator...")
     asyncio.run(main())
