@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import DataTableCSS from "./DataTableCSS.css";
 
 const SensorStatusTable = () => {
   const [sensors, setSensors] = useState([]);
@@ -23,7 +24,7 @@ const SensorStatusTable = () => {
   };
 
   return (
-    <div className="p-4 flex-grow-1">
+    <div className="p-4 flex-grow-1 min-vh-100">
       <Navbar />
       <h2>Sensor Status</h2>
       {loading ? (

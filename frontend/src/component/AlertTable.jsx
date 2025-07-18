@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import DataTableCSS from "./DataTableCSS.css";
 const DataTable = () => {
   const [sensorData, setSensorData] = useState([]);
   const [startDate, setStartDate] = useState("");
@@ -44,7 +45,7 @@ const DataTable = () => {
   return (
     <>
       <Navbar />
-      <div className="container data-table-container p-4 mt-4">
+      <div className="container data-table-container p-4 mt-4 min-vh-100">
         <center>
           <h2 className="text-center mb-4">
             <b>Alerts</b>

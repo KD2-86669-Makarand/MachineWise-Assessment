@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <div className="flex-grow-1">
+      <div className="flex-grow-1 min-vh-100">
         <h1>SENSOR DATA</h1>
       </div>
     </>

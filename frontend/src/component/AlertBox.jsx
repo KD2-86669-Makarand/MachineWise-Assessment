@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import Navbar from "./Navbar";
+import DataTableCSS from "./DataTableCSS.css";
 
 const socket = io("http://localhost:8080");
 
@@ -21,7 +22,7 @@ const AlertBox = () => {
   return (
     <>
       <Navbar />
-      <div className="flex-grow-1">
+      <div className="flex-grow-1 min-vh-100">
         <h1>Live Alert</h1>
         {alerts.length === 0 ? (
           <p>No alerts yet.</p>
